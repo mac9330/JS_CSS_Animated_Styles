@@ -12,7 +12,7 @@
 
 ## Wireframe
 
-![Wireframe](https://i.imgur.com/JatsF8N.png)
+![Wireframe](https://i.imgur.com/Nk8DfZ5.png)
 
 ## TimeLine
 
