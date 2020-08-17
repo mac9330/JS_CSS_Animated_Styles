@@ -8,7 +8,6 @@
 
 * **Grid including buttons styled with 3D animations**
 
-* **Animation using canvas with hover effects**
 
 ## Wireframe
 
