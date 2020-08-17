@@ -21,3 +21,8 @@
 * CSS implementiation - pixel perfect, animations, 3D modeling
 ### Day 3 
 * Animated Splash Text - Text that changes color on hover possibly possbly bubble effects that grow on hover
+
+## Technologies
+* CSS
+* HTML 
+* JavaScript
