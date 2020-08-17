@@ -26,3 +26,5 @@
 * CSS
 * HTML 
 * JavaScript
+* Webpack
+
