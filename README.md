@@ -10,3 +10,4 @@
 
 * **Animation using canvas with hover effects**
 
+![Wireframe](https://i.imgur.com/JatsF8N.png)
