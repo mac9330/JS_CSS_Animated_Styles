@@ -21,4 +21,4 @@
 ### Day 2 
 * CSS implementiation - pixel perfect, animations, 3D modeling
 ### Day 3 
-* Animation - fully designed Canvas App with animations that change state on hover 
+* Animated Splash Text - Text that changes color on hover possibly possbly bubble effects that grow on hover
