@@ -1,103 +1,32 @@
 import "./styles/index.scss";
-import canvasExample from "./scripts/canvas";
-import Square from "./scripts/square";
-import { DOMExample } from "./scripts/DOMExample";
-const currentStateObj = {
-  currentExample: null,
-  currentEventListeners: [],
+
+let scrollTop = window.scrollY
+
+const heroEles = document.querySelectorAll('.hero')
+heroEles[0].style.left = "50%"
+heroEles[1].style.left = "50%"
+heroEles[0].style.top = scrollTop + 200 + "px"
+heroEles[1].style.top = scrollTop + 300 + "px"
+
+
+const scrollHero = () => {
+  let scrollTop = window.scrollY - (prevScrollTop || 0);
+
+  heroEles[0].style.left =  50 - scrollTop / 8 + "%"
+  heroEles[0].style.top = scrollTop + 200 + "px"
+
+  heroEles[1].style.left =  50 + scrollTop / 8 + "%"
+  heroEles[1].style.top = scrollTop + 300 + "px"
+  
+  let prevScrollTop = window.scrollY // important being used on line 18 dont delete again :(
+}
+
+
+// event listener for hero image animation on scroll
+window.addEventListener("scroll", scrollHero)
+
+
+// load top of page after reload
+window.onbeforeunload = function () {
+  if (window.scrollTo) window.scrollTo(0, 0);
 };
-
-document.querySelector("#canvas-demo").addEventListener("click", startCanvas);
-document.querySelector("#DOM-demo").addEventListener("click", startDOM);
-
-function startDOM() {
-  unregisterEventListeners();
-  clearDemo();
-  currentStateObj.currentExample = "DOMDEMO";
-  DOMExample();
-}
-
-function startCanvas() {
-  clearDemo();
-  unregisterEventListeners();
-  currentStateObj.currentExample = "CANVASDEMO";
-  const canvas = new canvasExample();
-  canvas.createCanvas();
-  const squares = [new Square(canvas.ctx, canvas.coords, canvas.fillColor)];
-
-  let animating = true;
-
-  const animation = () => {
-    canvas.clearCanvas();
-    if (animating) squares.forEach((sq) => sq.updateSquare(canvas.fillColor));
-    squares.forEach((sq) => sq.drawSquare());
-    window.requestAnimationFrame(animation);
-    squares.forEach((sq) => {
-      if (sq.coords[0] + sq.coords[2] > window.innerWidth)
-        sq.reverseAnimation();
-      if (sq.coords[0] < 0) sq.reverseAnimation();
-    });
-  };
-
-  window.requestAnimationFrame(animation);
-
-  window.addEventListener("keydown", handleKeyDown);
-  currentStateObj.currentEventListeners.push([
-    "window",
-    "keydown",
-    handleKeyDown,
-  ]);
-
-  window.addEventListener("mousedown", handleMouseDown);
-  currentStateObj.currentEventListeners.push([
-    "window",
-    "mousedown",
-    handleMouseDown,
-  ]);
-
-  function handleKeyDown(event) {
-    if (event.which === 32) {
-      event.preventDefault();
-      squares.forEach((sq) => sq.reverseAnimation());
-      canvas.setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
-    }
-  }
-
-  function handleMouseDown(event) {
-    event.preventDefault();
-    squares.push(
-      new Square(
-        canvas.ctx,
-        canvas.coords.map((co) => co + 25),
-        canvas.fillColor
-      )
-    );
-    // animating = !animating;
-  }
-}
-
-function unregisterEventListeners() {
-  while (currentStateObj.currentEventListeners.length) {
-    let [
-      selector,
-      event,
-      handler,
-    ] = currentStateObj.currentEventListeners.pop();
-    if (selector === "window") {
-      window.removeEventListener(event, handler);
-      console.log(handler);
-    } else {
-      document.querySelector(selector).removeEventListener(event, handler);
-    }
-  }
-}
-
-function clearDemo() {
-  if (currentStateObj.currentExample === "CANVASDEMO")
-    document.body.removeChild(document.querySelector("canvas"));
-  if (currentStateObj.currentExample === "DOMDEMO") {
-    [...document.querySelectorAll(".card")].forEach((elem) =>
-      document.body.removeChild(elem)
-    );
-  }
-}
