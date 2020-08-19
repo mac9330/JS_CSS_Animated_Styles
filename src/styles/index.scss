@@ -1,5 +1,21 @@
+
+
 $myRed: rgb(181, 63, 75);
 $myYellow: rgb(253, 215, 130);
+
+// variables
+
+//functions
+
+@function set-notification-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000;
+  }
+
+  @else {
+    @return #ffffff; 
+  }
+}
 
 
 html, body {
@@ -208,19 +224,59 @@ h1 {
 .card-back-x {
   background: white;
   transform: rotateX(180deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: random($limit: 1);
+  animation-delay: -3s;
 }
 
 .card-back-y {
   background: white;
   transform: rotateY(180deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: random($limit: 1);
+  animation-delay: -6s;
 }
 
 .card-back-z {
-  background: white;
   transform: rotateZ(360deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: random($limit: 1);
+  animation-delay: -9s;
+}
+
+.card-front-z {
+    transform: rotateZ(360deg);
+    background-color: white;
 }
 
 
 
+
+@keyframes bgcolor {
+  0% {
+    background-color: rgb(202, 163, 163);
+    color: lighten($color: black, $amount: 10%);
+  }
+
+  30% {
+    background-color: #61d826;
+    color: lighten($color: black, $amount: 10%);
+  }
+
+  60% {
+    background-color: rgb(255, 153, 0);
+    color: lighten($color: black, $amount: 20%);
+  }
+  
+  90% {
+    background-color: rgb(63, 60, 60);
+    color: lighten($color: black, $amount: 100%);
+  }
+  
+  100% {
+    background-color: #1c3fb1;
+    color: lighten($color: black, $amount: 50%);
+  }
+}
 
 
