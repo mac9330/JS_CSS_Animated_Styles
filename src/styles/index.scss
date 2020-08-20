@@ -2,40 +2,11 @@
 
 @import "./layout.scss";
 
+@import "./typewriter.scss";
+
 @import "./hero.scss";
 
 @import "./description";
 
 @import "./cards";
 
-.txt-writer {
-  display: flex;
-  color: white;
-  position: relative;
-  margin: 50px;
-}
-
-.typewriter {
-  color: lighten($myRed, 10%);
-  &::after {
-    content: " ";
-    position: absolute;
-    width: 1px;
-    height: 40%;
-    border-right: 4px solid $myRed;
-    animation: blink 1.5s infinite ease-in;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}

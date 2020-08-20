@@ -59,7 +59,7 @@ cardSix.addEventListener('click', () => {
   cardSix.classList.toggle('is-flipped');
 });
 
-const text = ["Frontend Developer", "Backend Developer", "Data Scientist", "FullStack Dev", "Software Engineer"]
+const text = ["Frontend Developer!", "Backend Developer!", "Database Engineer!", "Data Scientist!", "Graphic Designer!", "FullStack Developer!", "Software Engineer!"]
 let count = 0;
 let index = 0;
 let currentText = '';
