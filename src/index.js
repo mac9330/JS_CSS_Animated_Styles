@@ -1,4 +1,5 @@
 import "./styles/index.scss";
+import TxtType from "./scripts/typewriter"
 
 // hero images interact on scroll
 const heroEles = document.querySelectorAll('.hero')
@@ -57,3 +58,52 @@ let cardSix = document.querySelector('.card-6');
 cardSix.addEventListener('click', () => {
   cardSix.classList.toggle('is-flipped');
 });
+
+const text = ["Frontend Developer", "Backend Developer", "Data Scientist", "FullStack Dev", "Software Engineer"]
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+// debugger
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
+function type() {
+  // debugger
+  if (count === text.length) {
+    count = 0;
+  }
+  currentText = text[count];
+  letter = currentText.slice(0, ++index)
+  document.querySelector('.typewriter').textContent = letter;
+
+  if(letter.length === currentText.length) {
+    setTimeout(erase, 3000)
+  } else {
+    setTimeout(type, 200);
+  }
+}
+
+function erase() {
+  if (index > 0) {
+    currentText = text[count];
+    letter = currentText.slice(0, --index)
+    document.querySelector('.typewriter').textContent = letter;
+    setTimeout(erase, 200)
+  } 
+  else {
+    count++;
+    setTimeout(type, 1000)
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(type, 1000)
+})

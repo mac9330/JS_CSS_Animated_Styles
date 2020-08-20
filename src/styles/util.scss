@@ -1,0 +1,16 @@
+$myRed: rgb(181, 63, 75);
+$myYellow: rgb(253, 215, 130);
+
+// variables
+
+//functions
+
+@function set-notification-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return #000000;
+    }
+
+    @else {
+        @return #ffffff;
+    }
+}

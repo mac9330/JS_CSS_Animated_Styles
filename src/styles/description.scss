@@ -1,0 +1,56 @@
+.content-2 {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.content-2-header {
+    width: 50%;
+}
+
+.chevron-1 {
+    bottom: -80vw;
+    right: 0;
+    width: 20%;
+    padding: 20px;
+    position: absolute;
+    animation-name: chevron;
+    animation-duration: 5s;
+    overflow: hidden;
+    animation-iteration-count: infinite;
+    z-index: -2;
+
+}
+
+.chevron-2 {
+    bottom: -80vw;
+    right: 80%;
+    width: 20%;
+    padding: 20px;
+    position: absolute;
+    animation-name: chevron;
+    animation-duration: 3.5s;
+
+    animation-iteration-count: infinite;
+    z-index: -2;
+}
+
+@keyframes chevron {
+    0% {
+        bottom: -80vw;
+    }
+
+    50% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: -80vw;
+        visibility: 0;
+        opacity: 0;
+    }
+}
