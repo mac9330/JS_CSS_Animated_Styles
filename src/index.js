@@ -1,5 +1,6 @@
 import "./styles/index.scss";
 
+
 // hero images interact on scroll
 const heroEles = document.querySelectorAll('.hero')
 // define position based on scroll percent
