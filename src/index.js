@@ -1,5 +1,4 @@
 import "./styles/index.scss";
-import TxtType from "./scripts/typewriter"
 
 // hero images interact on scroll
 const heroEles = document.querySelectorAll('.hero')
