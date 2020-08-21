@@ -1,14 +1,14 @@
 .card-case {
-    margin: 40px 0;
+    margin: 2% 5%;
     perspective: 600px;
     width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-row-gap: 50px;
-    margin: 5%;
     width: 100%;
     height: auto;
+    justify-content: space-between;
 }
 
 .card {
@@ -60,7 +60,7 @@
     width: 100%;
     height: 100%;
     line-height: 260px;
-    color: $myRed;
+    color: black;
     text-align: center;
     font-size: 20px;
     backface-visibility: hidden;
@@ -102,7 +102,7 @@
 .card-front-y {
     transform: rotateZ(360deg);
     background-size: 200% 100%;
-    background-image: linear-gradient(to right, white 50%, lighten($myYellow, 10%) 50%);
+    background-image: linear-gradient(to right, white 50%, lighten(rgba(53, 136, 245, 0.658), 10%) 50%);
     transition: background-position 1s;
 
     &:hover {
@@ -113,7 +113,7 @@
 .card-front-x {
     transform: rotateZ(360deg);
     background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, white 50%, lighten($myYellow, 10%) 50%);
+    background-image: linear-gradient(to bottom, white 50%, lighten(rgba(71, 245, 100, 0.692), 10%) 50%);
     transition: background-position 1s;
 
     &:hover {
@@ -124,7 +124,7 @@
 .card-front-z {
     transform: rotateZ(360deg);
     background-size: 200% 100%;
-    background-image: linear-gradient(to right, white 50%, lighten($myYellow, 10%) 50%);
+    background-image: linear-gradient(to right, white 50%, lighten(rgba(225, 240, 13, 0.562), 10%) 50%);
     transition: background-position 1s;
 
     &:hover {

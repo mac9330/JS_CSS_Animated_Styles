@@ -12,6 +12,8 @@ const scrollHero = () => {
 
   heroEles[1].style.left =  42 + scrollTop / 8 + "%"
   heroEles[1].style.top = scrollTop + 300 + "px"
+
+  enhance()
   
   let prevScrollTop = window.scrollY // important being used on line 13 dont delete again :(
 }
@@ -59,13 +61,13 @@ cardSix.addEventListener('click', () => {
   cardSix.classList.toggle('is-flipped');
 });
 
+// typewriter
+
 const text = ["Frontend Developer!", "Backend Developer!", "Database Engineer!", "Data Scientist!", "Graphic Designer!", "FullStack Developer!", "Software Engineer!"]
 let count = 0;
 let index = 0;
 let currentText = '';
 let letter = '';
-
-// debugger
 
 function sleep(milliseconds) {
   const date = Date.now();
@@ -76,7 +78,6 @@ function sleep(milliseconds) {
 }
 
 function type() {
-  // debugger
   if (count === text.length) {
     count = 0;
   }
@@ -107,3 +108,43 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(type, 1000)
 })
+
+document.addEventListener("DOMContentLoaded", enhance())
+
+function enhance() {
+
+
+  let scrollpos = window.scrollY
+  const body = document.querySelector("body");
+  const nav = document.querySelector("nav");
+  const chevrons = document.querySelectorAll(".chevron");
+  const background = document.querySelector(".center")
+
+  const content1_height = body.offsetHeight
+
+  const add_class_on_scroll = () => {
+    body.classList.add("content2");
+    nav.classList.add("nav");
+    background.classList.add("center-change")
+    chevrons.forEach(chevron => chevron.classList.add("chevron-change"));
+
+  }
+  const remove_class_on_scroll = () => {
+    body.classList.remove("content2");
+    nav.classList.remove("nav");
+    chevrons.forEach(chevron => chevron.classList.remove("chevron-change"));
+    background.classList.remove("center-change")
+  } 
+
+  window.addEventListener('scroll', function () {
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= content1_height + 168) {
+      add_class_on_scroll();
+    } else {
+      remove_class_on_scroll();
+    }
+
+  })
+
+}
