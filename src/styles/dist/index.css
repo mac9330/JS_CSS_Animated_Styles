@@ -523,7 +523,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(47px) rotateZ(45deg);
-  background-color: yellow;
+  background-color: #23e5ff;
 }
 
 .slider.round {
