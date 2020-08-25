@@ -483,3 +483,57 @@ nav .icons {
     stroke-dashoffset: 0;
   }
 }
+.switch {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 55px;
+  margin-bottom: 30px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: white;
+  transition: 0.5s;
+  border: 3px solid white;
+  box-shadow: 1px 1px 1px solid rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  top: 8px;
+  background-color: lightgrey;
+  transition: 0.5s;
+}
+
+.switch input {
+  display: none;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:checked + .slider:before {
+  transform: translateX(47px) rotateZ(45deg);
+  background-color: yellow;
+}
+
+.slider.round {
+  border-radius: 35px;
+}
+
+.slider.round:before {
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotate();
+}

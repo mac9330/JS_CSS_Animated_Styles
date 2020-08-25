@@ -133,6 +133,11 @@ function enhance() {
   });
 }
 
-document.getElementById('design-button').addEventListener('click', function () {
+document.getElementById('design-button').addEventListener('click', function (event) {
+  if (event.target.tagName === 'LABEL' || event.target.tagName === 'SPAN') {
+    return;
+  }
+
   document.getElementById('designer').classList.toggle("draw");
+  debugger;
 });
