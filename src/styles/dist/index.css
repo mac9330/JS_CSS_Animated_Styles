@@ -1,0 +1,485 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Do Hyeon", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fdd782;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  color: #b53f4b;
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 110%;
+  height: 50px;
+  border-bottom: 3px solid #b53f4b;
+  display: flex;
+  align-items: space-around;
+  z-index: 10;
+  background-color: #fdd782;
+  overflow: hidden;
+  z-index: 10;
+}
+nav .icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 5px;
+}
+
+.txt-writer {
+  display: flex;
+  color: white;
+  position: relative;
+  margin: 50px;
+}
+
+.typewriter {
+  color: #c7606a;
+}
+.typewriter::after {
+  content: " ";
+  position: absolute;
+  width: 1px;
+  height: 40%;
+  border-right: 4px solid #b53f4b;
+  animation: blink 1.5s infinite ease-in;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#main-content {
+  width: 100%;
+  height: 100vh;
+  margin: 20px;
+}
+
+.hero {
+  position: absolute;
+  width: auto;
+}
+
+#hero-text-name {
+  min-width: 300px;
+  height: 100px;
+  color: #b53f4b;
+  left: 42%;
+  top: 200px;
+}
+
+#hero-text-aa {
+  min-width: 300px;
+  height: 120px;
+  color: black;
+  z-index: -1;
+  left: 42%;
+  top: 300px;
+}
+
+.books {
+  width: 500px;
+  height: auto;
+}
+
+.fab {
+  color: #b53f4b;
+  justify-self: center;
+  margin: 5px;
+}
+
+#space-taker {
+  width: 100%;
+  height: 150px;
+}
+
+.content-2 {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.content-2-header {
+  width: 50%;
+}
+
+.chevron-1 {
+  bottom: -80vw;
+  right: 0;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 5s;
+  overflow: hidden;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-2 {
+  bottom: -80vw;
+  right: 80%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-3 {
+  bottom: -80vw;
+  right: 50%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-4 {
+  bottom: -80vw;
+  right: 25%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+@keyframes chevron {
+  0% {
+    bottom: -80vw;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -80vw;
+    visibility: 0;
+    opacity: 0;
+  }
+}
+.center {
+  padding-top: 50px;
+  border-top: 2px solid black;
+  display: flex;
+  width: 100%;
+  height: 22vw;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  text-align: center;
+  font-size: 40px;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: slide 20s linear infinite forwards;
+  width: 50%;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+.card-case {
+  margin: 2% 5%;
+  perspective: 600px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 50px;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+}
+
+.card {
+  width: 200px;
+  height: 150px;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  transform-origin: center right;
+}
+
+.card-6, .card-3 {
+  transform-origin: center left;
+}
+
+.card-face {
+  border-radius: 15px;
+}
+
+.card-1.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.card-2.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-3.is-flipped {
+  transform: rotateZ(180deg);
+}
+
+.card-4.is-flipped {
+  transform: rotateX(-180deg);
+}
+
+.card-5.is-flipped {
+  transform: rotateY(-180deg);
+}
+
+.card-6.is-flipped {
+  transform: rotateZ(-180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-front-x,
+.card-front-y,
+.card-front-z {
+  background: white;
+}
+
+.card-back-x {
+  background: white;
+  transform: rotateX(180deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: 1;
+  animation-delay: -3s;
+}
+
+.card-back-y {
+  background: white;
+  transform: rotateY(180deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: 1;
+  animation-delay: -6s;
+}
+
+.card-back-z {
+  transform: rotateZ(180deg);
+  animation: bgcolor 10s infinite;
+  animation-direction: 1;
+  animation-delay: -9s;
+}
+
+.card-front-y {
+  transform: rotateZ(360deg);
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, white 50%, rgba(102, 165, 247, 0.658) 50%);
+  transition: background-position 1s;
+}
+.card-front-y:hover {
+  background-position: -100% 0%;
+}
+
+.card-front-x {
+  transform: rotateZ(360deg);
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, white 50%, rgba(119, 248, 141, 0.692) 50%);
+  transition: background-position 1s;
+}
+.card-front-x:hover {
+  background-position: 0% -100%;
+}
+
+.card-front-z {
+  transform: rotateZ(360deg);
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, white 50%, rgba(232, 244, 60, 0.562) 50%);
+  transition: background-position 1s;
+}
+.card-front-z:hover {
+  background-position: 100% 0%;
+}
+
+@keyframes bgcolor {
+  0% {
+    background-color: #caa3a3;
+    color: #1a1a1a;
+  }
+  30% {
+    background-color: #61d826;
+    color: #1a1a1a;
+  }
+  60% {
+    background-color: #ff9900;
+    color: #333333;
+  }
+  90% {
+    background-color: #3f3c3c;
+    color: white;
+  }
+  100% {
+    background-color: #1c3fb1;
+    color: gray;
+  }
+}
+.center-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content2 {
+  background-color: #e9ebe2;
+}
+
+.center-80 {
+  margin: 0 5%;
+  display: flex;
+  align-self: center;
+}
+
+.pop {
+  color: white;
+  font-size: 50px;
+  margin-top: 5%;
+  letter-spacing: 5px;
+  text-shadow: 0 2px 1px #747474, -1px 3px 1px #767676, -2px 5px 1px #787878, -3px 7px 1px #7a7a7a, -4px 9px 1px #7f7f7f, -5px 11px 1px #838383, -6px 13px 1px #878787, -7px 15px 1px #8a8a8a, -8px 17px 1px #8e8e8e, -9px 19px 1px #949494, -10px 21px 1px #989898, -11px 23px 1px #9f9f9f;
+}
+
+.nav {
+  background-color: black;
+}
+
+.chevron-change {
+  display: none;
+}
+
+.center-change {
+  background-image: url(https://image.freepik.com/free-photo/panorama-blue-sky-with-soft-cloud_34152-2116.jpg);
+  background-size: cover;
+}
+
+.designer {
+  width: 45%;
+  margin-top: 90px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  stroke: none;
+  fill: none;
+}
+
+.draw {
+  stroke: black;
+}
+
+.draw path:nth-child(1) {
+  stroke-dasharray: 571.5770874023;
+  stroke-dashoffset: 571.5770874023;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(2) {
+  stroke-dasharray: 515.2633056641;
+  stroke-dashoffset: 515.2633056641;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(3) {
+  stroke-dasharray: 418.8185119629;
+  stroke-dashoffset: 418.8185119629;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(4) {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(5) {
+  stroke-dasharray: 693.079284668;
+  stroke-dashoffset: 693.079284668;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(6) {
+  stroke-dasharray: 422.5006408691;
+  stroke-dashoffset: 422.5006408691;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(7) {
+  stroke-dasharray: 515.2639770508;
+  stroke-dashoffset: 515.2639770508;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(8) {
+  stroke-dasharray: 246.0244140625;
+  stroke-dashoffset: 246.0244140625;
+  animation: letter 10s ease forwards;
+}
+
+.draw path:nth-child(9) {
+  stroke-dasharray: 7392.9858398438;
+  stroke-dashoffset: -7392.9858398438;
+  animation: letter 10s ease forwards;
+}
+
+@keyframes letter {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

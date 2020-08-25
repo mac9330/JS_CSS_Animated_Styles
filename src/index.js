@@ -148,3 +148,7 @@ function enhance() {
   })
 
 }
+
+document.getElementById('design-button').addEventListener('click', function () {
+  document.getElementById('designer').classList.toggle("draw")
+})
