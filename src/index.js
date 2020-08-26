@@ -7,10 +7,10 @@ const heroEles = document.querySelectorAll('.hero')
 const scrollHero = () => {
   let scrollTop = window.scrollY - (prevScrollTop || 0);
 
-  heroEles[0].style.left =  42 - scrollTop / 8 + "%"
+  heroEles[0].style.left =  42 - scrollTop / 5 + "%"
   heroEles[0].style.top = scrollTop + 200 + "px"
 
-  heroEles[1].style.left =  42 + scrollTop / 8 + "%"
+  heroEles[1].style.left =  42 + scrollTop / 5 + "%"
   heroEles[1].style.top = scrollTop + 300 + "px"
 
   enhance()
@@ -154,7 +154,5 @@ document.getElementById('design-button').addEventListener('click', function (eve
     return;
   }
   document.getElementById('designer').classList.toggle("draw")
-  debugger
 })
 
-// add anything

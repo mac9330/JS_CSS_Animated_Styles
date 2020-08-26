@@ -1,0 +1,110 @@
+.content-2 {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.content-2-header {
+  width: 50%;
+}
+
+.chevron-1 {
+  bottom: -80vw;
+  right: 0;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 5s;
+  overflow: hidden;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-2 {
+  bottom: -80vw;
+  right: 80%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-3 {
+  bottom: -80vw;
+  right: 50%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+.chevron-4 {
+  bottom: -80vw;
+  right: 25%;
+  width: 20%;
+  padding: 20px;
+  position: absolute;
+  animation-name: chevron;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  z-index: -2;
+}
+
+@keyframes chevron {
+  0% {
+    bottom: -80vw;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -80vw;
+    visibility: 0;
+    opacity: 0;
+  }
+}
+.center {
+  padding-top: 50px;
+  border-top: 2px solid black;
+  display: flex;
+  width: 100%;
+  min-height: 22vw;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  text-align: center;
+  font-size: 40px;
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: slide 20s linear infinite forwards;
+  width: 50%;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
