@@ -67,3 +67,9 @@ input:checked + .slider:before {
     border-top-right-radius: 50px;
     transform: rotate();
 }
+
+@media (max-width: 500px) {
+    .book {
+        display: none;
+    }
+}
