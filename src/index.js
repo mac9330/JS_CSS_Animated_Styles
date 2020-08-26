@@ -21,7 +21,7 @@ const scrollHero = () => {
 window.addEventListener("scroll", scrollHero)
 
 
-// load top of page after reload
+// load top of page after reload (removed)
 // window.onbeforeunload = function () {
 //   if (window.scrollTo) window.scrollTo(0, 0);
 // };
